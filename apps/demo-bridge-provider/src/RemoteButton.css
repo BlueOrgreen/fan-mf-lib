@@ -1,0 +1,32 @@
+.remote-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.remote-button.primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.remote-button.primary:hover:not(:disabled) {
+  background-color: #2563eb;
+}
+
+.remote-button.secondary {
+  background-color: #6b7280;
+  color: white;
+}
+
+.remote-button.secondary:hover:not(:disabled) {
+  background-color: #4b5563;
+}
+
+.remote-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

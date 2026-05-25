@@ -1,0 +1,70 @@
+{
+  "name": "fan-mf-lib",
+  "version": "0.0.15",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.6.5",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BlueOrgreen/fan-mf-lib.git"
+  },
+  "homepage": "https://github.com/BlueOrgreen/fan-mf-lib#readme",
+  "bugs": {
+    "url": "https://github.com/BlueOrgreen/fan-mf-lib/issues"
+  },
+  "author": "BlueOrgreen",
+  "description": "Yunfan Module Federation 工具集：运行时动态加载远程 React/Vue 组件，多版本共存、CDN 故障转移与 Bridge 懒加载。",
+  "keywords": [
+    "module-federation",
+    "micro-frontend",
+    "react",
+    "vue3",
+    "typescript",
+    "pnpm",
+    "rsbuild",
+    "remote-components"
+  ],
+  "scripts": {
+    "build": "pnpm -r run build",
+    "dev": "pnpm -r run dev",
+    "test": "pnpm -r run test",
+    "lint": "pnpm -r run lint",
+    "format": "pnpm -r run format",
+    "check": "pnpm -r run check",
+    "changeset": "changeset",
+    "version": "changeset version",
+    "publish": "changeset publish",
+    "add": "changeset add",
+    "pre": "changeset pre",
+    "status": "changeset status",
+    "release": "./release.sh",
+    "changeset:auto": "tsx scripts/auto-changeset.ts",
+    "build:react-adapter": "pnpm --filter react-adapter run build",
+    "build:fan-mf-runtime": "pnpm --filter fan-mf-runtime run build",
+    "build:test-mf-unpkg": "pnpm --filter test-mf-unpkg run build",
+    "build:vue-adapter": "pnpm --filter vue-adapter run build",
+    "build:demo-app-bridge-provider": "pnpm --filter demo-app-bridge-provider run build",
+    "build:demo-app-bridge-host": "pnpm --filter demo-app-bridge-host run build",
+    "build:demo-app-bridge": "pnpm --filter fan-mf-runtime run build && pnpm --filter demo-app-bridge-provider run build && pnpm --filter demo-app-bridge-host run build",
+    "dev:react-adapter": "pnpm --filter react-adapter run dev",
+    "dev:fan-mf-runtime": "pnpm --filter fan-mf-runtime run dev",
+    "dev:test-mf-unpkg": "pnpm --filter test-mf-unpkg run dev",
+    "dev:vue-adapter": "pnpm --filter vue-adapter run dev",
+    "dev:demo-app-bridge-provider": "pnpm --filter demo-app-bridge-provider run dev",
+    "dev:demo-app-bridge-host": "pnpm --filter demo-app-bridge-host run dev",
+    "dev:demo-app-bridge": "pnpm --filter demo-app-bridge-host run dev:all",
+    "test:demo-app-bridge": "pnpm --filter fan-mf-runtime run build && pnpm --filter demo-app-bridge-provider run test && pnpm --filter demo-app-bridge-host run test",
+    "sync:types": "tsx scripts/sync-remote-types.ts",
+    "sync:types:help": "tsx scripts/sync-remote-types.ts --help"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.6",
+    "@changesets/cli": "^2.30.0",
+    "@module-federation/typescript": "^3.1.6",
+    "@rsbuild/core": "^1.4.13",
+    "@rslib/core": "0.17.0",
+    "concurrently": "^9.1.2",
+    "tsx": "^4.19.3",
+    "typescript": "^5.9.2"
+  }
+}

@@ -1,0 +1,104 @@
+{
+  "name": "fan-mf-runtime",
+  "version": "1.0.6",
+  "type": "module",
+  "description": "Utilities for remote reload in Module Federation & React Component",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/main.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/main.cjs"
+      }
+    },
+    "./vue": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/main.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/main.cjs"
+      }
+    },
+    "./react": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/main.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/main.cjs"
+      }
+    }
+  },
+  "main": "./dist/main.cjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "loadRemote.md",
+    "CHANGELOG.md"
+  ],
+  "gitRepository": {
+    "type": "git",
+    "url": "https://github.com/BlueOrgreen/fan-mf-lib.git",
+    "directory": "packages/fan-mf-runtime"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0",
+    "vue": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    }
+  },
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch",
+    "prepublishOnly": "pnpm run build",
+    "format": "biome format --write",
+    "check": "biome check --write",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "lint": "biome format ./src --write",
+    "release:prepare": "node scripts/generateReleasePr.mjs",
+    "release:finalize": "node scripts/finalizeRelease.mjs",
+    "release:patch": "pnpm release:prepare -t patch",
+    "release:minor": "pnpm release:prepare -t minor",
+    "release:major": "pnpm release:prepare -t major",
+    "publish:dry": "npm publish --dry-run",
+    "publish:live": "npm publish"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.6",
+    "@changesets/changelog-git": "^0.2.1",
+    "@rslib/core": "0.17.0",
+    "@tailwindcss/postcss": "^4.2.1",
+    "@testing-library/react": "^16.3.2",
+    "@types/node": "^22.17.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.3.7",
+    "@vitest/ui": "^2.1.8",
+    "base-biome-config": "0.0.8",
+    "happy-dom": "^20.8.4",
+    "postcss": "^8.5.8",
+    "rsbuild-plugin-publint": "^0.3.3",
+    "tailwindcss": "^4.2.1",
+    "typescript": "^5.9.2",
+    "vitest": "^2.1.8"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@10.6.5",
+  "dependencies": {
+    "@module-federation/bridge-react": "latest",
+    "@module-federation/enhanced": "0.18.3",
+    "react-router-dom": "^6.30.0"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "$schema": "./scripts/mf-types.schema.json",
+  "remoteModules": [
+    {
+      "name": "test-mf-unpkg",
+      "version": "latest",
+      "registry": "https://registry.npmjs.org",
+      "unpkg": "https://unpkg.com",
+      "localPath": "apps/test-mf-unpkg",
+      "exposedModules": {
+        "./Button": "Button",
+        "./Card": "Card"
+      }
+    }
+  ],
+  "typesDir": "@mf-types"
+}

@@ -1,0 +1,3 @@
+packages:
+  - "packages/*"   # 你所有的包（比如组件库、工具库）
+  - "apps/*"       # 你所有的应用（host、微前端 app）

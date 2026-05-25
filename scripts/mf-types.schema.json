@@ -1,0 +1,65 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Module Federation 类型同步配置",
+  "description": "配置远程模块类型同步的参数",
+  "type": "object",
+  "properties": {
+    "remoteModules": {
+      "type": "array",
+      "description": "远程模块配置列表",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "远程模块的 npm 包名"
+          },
+          "version": {
+            "type": "string",
+            "description": "版本号，支持 'latest' 或 semver 范围",
+            "default": "latest"
+          },
+          "registry": {
+            "type": "string",
+            "description": "npm registry 地址",
+            "default": "https://registry.npmjs.org",
+            "format": "uri"
+          },
+          "unpkg": {
+            "type": "string",
+            "description": "CDN 地址",
+            "default": "https://unpkg.com",
+            "format": "uri"
+          },
+          "localPath": {
+            "type": "string",
+            "description": "本地 monorepo 路径，相对于项目根目录"
+          },
+          "exposedModules": {
+            "type": "object",
+            "description": "暴露的模块映射",
+            "additionalProperties": {
+              "type": "string",
+              "description": "模块导出名"
+            },
+            "examples": [
+              {
+                "./Button": "Button",
+                "./Card": "Card"
+              }
+            ]
+          }
+        },
+        "required": ["name", "localPath", "exposedModules"],
+        "additionalProperties": false
+      }
+    },
+    "typesDir": {
+      "type": "string",
+      "description": "类型输出目录名",
+      "default": "@mf-types"
+    }
+  },
+  "required": ["remoteModules"],
+  "additionalProperties": false
+}

@@ -1,0 +1,30 @@
+{
+  "name": "demo-app-bridge-host",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rsbuild build",
+    "dev": "rsbuild dev --open",
+    "dev:all": "concurrently --kill-others \"pnpm --filter demo-app-bridge-provider dev\" \"sleep 3 && pnpm dev\"",
+    "preview": "rsbuild preview",
+    "test": "pnpm run build"
+  },
+  "dependencies": {
+    "@module-federation/bridge-react": "0.18.3",
+    "@module-federation/enhanced": "0.18.3",
+    "@module-federation/runtime": "0.18.3",
+    "fan-mf-runtime": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@module-federation/rsbuild-plugin": "0.18.3",
+    "@rsbuild/core": "^1.4.13",
+    "@rsbuild/plugin-react": "^1.3.4",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "concurrently": "^9.1.2",
+    "typescript": "^5.9.2"
+  }
+}

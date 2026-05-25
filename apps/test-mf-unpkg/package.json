@@ -1,0 +1,43 @@
+{
+  "name": "test-mf-unpkg",
+  "private": false,
+  "version": "1.0.7",
+  "main": "dist/remoteEntry.js",
+  "types": "dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/types/index.d.ts",
+      "import": "./dist/remoteEntry.js"
+    },
+    "./Button": {
+      "types": "./dist/types/Button.d.ts"
+    },
+    "./Card": {
+      "types": "./dist/types/Card.d.ts"
+    }
+  },
+  "scripts": {
+    "dev": "rspack dev",
+    "build": "rspack build",
+    "build:types": "tsc --emitDeclarationOnly --outDir dist/types",
+    "build:all": "pnpm build:types && pnpm build",
+    "preview": "rspack preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "files": [
+    "dist"
+  ],
+  "devDependencies": {
+    "@rspack/cli": "^1.4.11",
+    "@rspack/core": "^1.4.11",
+    "@rspack/plugin-react-refresh": "^1.4.3",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "react-refresh": "^0.17.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  }
+}

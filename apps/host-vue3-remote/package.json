@@ -1,0 +1,23 @@
+{
+  "name": "host-vue3-remote",
+  "private": true,
+  "version": "0.0.2",
+  "type": "module",
+  "scripts": {
+    "dev": "rsbuild dev",
+    "build": "rsbuild build",
+    "preview": "rsbuild preview",
+    "sync:types": "pnpm --workspace-root sync:types -- --target host-vue3-remote"
+  },
+  "dependencies": {
+    "@yunfan/vue-adapter": "workspace:*",
+    "vue": "^3.5.30"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^1.4.13",
+    "@rsbuild/plugin-vue": "^1.2.7",
+    "@types/node": "^24.12.0",
+    "@vue/tsconfig": "^0.9.0",
+    "typescript": "~5.9.3"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "demo-bridge-host",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "rsbuild build",
+    "dev": "rsbuild dev --open",
+    "dev:all": "concurrently --kill-others \"pnpm --filter demo-bridge-provider dev\" \"sleep 3 && pnpm dev\"",
+    "preview": "rsbuild preview"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "fan-mf-runtime": "workspace:*",
+    "@module-federation/enhanced": "0.18.3"
+  },
+  "devDependencies": {
+    "@rsbuild/core": "^1.4.13",
+    "@rsbuild/plugin-react": "^1.3.4",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "concurrently": "^9.1.2",
+    "typescript": "^5.9.2"
+  }
+}

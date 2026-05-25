@@ -1,0 +1,72 @@
+{
+  "name": "@yunfan/react-adapter",
+  "version": "1.0.1",
+  "type": "module",
+  "description": "React adapter for fan-mf-runtime - React components for loading remote modules",
+  "exports": {
+    ".": {
+      "import": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.cjs"
+      }
+    }
+  },
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist",
+    "README.md",
+    "CHANGELOG.md"
+  ],
+  "gitRepository": {
+    "type": "git",
+    "url": "https://github.com/BlueOrgreen/fan-mf-lib.git",
+    "directory": "packages/react-adapter"
+  },
+  "keywords": [
+    "react",
+    "module-federation",
+    "adapter",
+    "micro-frontend",
+    "remote-components"
+  ],
+  "peerDependencies": {
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0",
+    "fan-mf-runtime": ">=1.0.3"
+  },
+  "peerDependenciesMeta": {
+    "fan-mf-runtime": {
+      "optional": false
+    }
+  },
+  "scripts": {
+    "build": "rslib build",
+    "dev": "rslib build --watch",
+    "prepublishOnly": "npm run build",
+    "format": "biome format --write",
+    "check": "biome check --write",
+    "lint": "biome format ./src --write"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.0.6",
+    "@rslib/core": "0.17.0",
+    "@types/node": "^22.17.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "base-biome-config": "0.0.8",
+    "rsbuild-plugin-publint": "^0.3.3",
+    "typescript": "^5.9.2"
+  },
+  "dependencies": {
+    "fan-mf-runtime": "workspace:*"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}
