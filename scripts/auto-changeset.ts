@@ -63,7 +63,7 @@ function generateChangesetId(): string {
 // 主函数
 function main(): void {
   const args = process.argv.slice(2)
-  const packages = args.length > 0 ? args : ['fan-mf-runtime']
+  const packages = args.length > 0 ? args : ['@fan-scripts/fan-mf-runtime']
 
   // 确保 .changeset 目录存在
   if (!fs.existsSync(changesetDir)) {

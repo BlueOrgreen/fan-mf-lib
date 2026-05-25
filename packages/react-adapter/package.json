@@ -1,5 +1,5 @@
 {
-  "name": "@yunfan/react-adapter",
+  "name": "@fan-scripts/react-adapter",
   "version": "1.0.1",
   "type": "module",
   "description": "React adapter for fan-mf-runtime - React components for loading remote modules",
@@ -38,10 +38,10 @@
   "peerDependencies": {
     "react": ">=17.0.0",
     "react-dom": ">=17.0.0",
-    "fan-mf-runtime": ">=1.0.3"
+    "@fan-scripts/fan-mf-runtime": ">=1.0.3"
   },
   "peerDependenciesMeta": {
-    "fan-mf-runtime": {
+    "@fan-scripts/fan-mf-runtime": {
       "optional": false
     }
   },
@@ -64,7 +64,7 @@
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "fan-mf-runtime": "workspace:*"
+    "@fan-scripts/fan-mf-runtime": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

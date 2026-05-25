@@ -2,7 +2,7 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** 在 `fan-mf-runtime` 中封装 Module Federation Bridge React 的 `lazyLoadComponentPlugin`、`createLazyComponent` 和 `prefetch` API
+**Goal:** 在 `@fan-scripts/fan-mf-runtime` 中封装 Module Federation Bridge React 的 `lazyLoadComponentPlugin`、`createLazyComponent` 和 `prefetch` API
 
 **Architecture:** 创建 `src/bridge/` 目录，封装 MF Bridge 的 lazy component 相关 API，与现有 `loadRemoteMultiVersion` 集成，提供 React Hook 和组件两种使用方式
 
@@ -197,7 +197,7 @@ import type { BridgePluginOptions } from './types'
  * @example
  * ```ts
  * import { getInstance } from '@module-federation/runtime'
- * import { createLazyLoadComponentPlugin } from 'fan-mf-runtime/bridge'
+ * import { createLazyLoadComponentPlugin } from '@fan-scripts/fan-mf-runtime/bridge'
  *
  * const instance = getInstance()
  * instance.registerPlugins([createLazyLoadComponentPlugin()])
@@ -733,7 +733,7 @@ import {
   createLazyLoadComponentPlugin,
   createLazyComponent,
   loadRemoteMultiVersion,
-} from 'fan-mf-runtime'
+} from '@fan-scripts/fan-mf-runtime'
 import { getInstance } from '@module-federation/runtime'
 
 // 1. 注册插件
@@ -764,7 +764,7 @@ function App() {
 ### 使用 Hook
 
 ```tsx
-import { useLazyComponent, loadRemoteMultiVersion } from 'fan-mf-runtime'
+import { useLazyComponent, loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime'
 
 function MyComponent() {
   const { loading, error, Component } = useLazyComponent({
@@ -788,7 +788,7 @@ function MyComponent() {
 ### 预加载组件
 
 ```tsx
-import { prefetchComponent } from 'fan-mf-runtime'
+import { prefetchComponent } from '@fan-scripts/fan-mf-runtime'
 
 // 在用户可能需要的地方预加载
 prefetchComponent({

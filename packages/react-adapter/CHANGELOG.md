@@ -1,18 +1,18 @@
-# @yunfan/react-adapter
+# @fan-scripts/react-adapter
 
 ## 1.0.1
 
 ### Patch Changes
 
 - Updated dependencies
-  - fan-mf-runtime@1.0.3
+  - @fan-scripts/fan-mf-runtime@1.0.3
 
 ## 1.0.0
 
 ### Patch Changes
 
 - Updated dependencies [9306c65]
-  - fan-mf-runtime@1.0.0
+  - @fan-scripts/fan-mf-runtime@1.0.0
 
 ## 0.0.1 (2026-03-18)
 

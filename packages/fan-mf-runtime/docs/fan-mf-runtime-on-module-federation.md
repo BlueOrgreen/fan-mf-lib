@@ -1,4 +1,4 @@
-# fan-mf-runtime：在 Module Federation 之上做了什么
+# @fan-scripts/fan-mf-runtime：在 Module Federation 之上做了什么
 
 本文说明 `packages/fan-mf-runtime` 在 **Module Federation 运行时**（以 `@module-federation/enhanced` 与 `@module-federation/bridge-react` 为底座）之上提供的**增值层**：解决了哪些问题、暴露哪些 API、与「裸用 MF」的分工边界。
 
@@ -119,8 +119,8 @@ flowchart LR
 
 ## 5. 与仓库内其它包的关系
 
-- **`@yunfan/react-adapter`**：通常组合 **`RemoteModuleProvider` / `lazyRemote` / `useRemoteModuleHook`**，内部可调用本库的 **`loadRemoteMultiVersion`** 等。
-- **`@yunfan/vue-adapter`**：Vue 侧消费 React remote 时，依赖宿主把 React 挂到 **`window`**；本库 **`getFinalSharedConfig`** 识别全局 React 并写入 **shared**，减少双 React 问题。
+- **`@fan-scripts/react-adapter`**：通常组合 **`RemoteModuleProvider` / `lazyRemote` / `useRemoteModuleHook`**，内部可调用本库的 **`loadRemoteMultiVersion`** 等。
+- **`@fan-scripts/vue-adapter`**：Vue 侧消费 React remote 时，依赖宿主把 React 挂到 **`window`**；本库 **`getFinalSharedConfig`** 识别全局 React 并写入 **shared**，减少双 React 问题。
 
 ---
 

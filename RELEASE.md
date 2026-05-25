@@ -129,8 +129,8 @@ pnpm pre exit
 
 ```markdown
 ---
-'fan-mf-runtime': minor
-'@yunfan/react-adapter': patch
+'@fan-scripts/fan-mf-runtime': minor
+'@fan-scripts/react-adapter': patch
 ---
 
 这里描述变更内容

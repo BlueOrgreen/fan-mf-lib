@@ -1,6 +1,6 @@
 # Vue Adapter 使用文档
 
-本文档对应 `@yunfan/vue-adapter` 源码目录，聚焦实际使用方式与常见接入场景。
+本文档对应 `@fan-scripts/vue-adapter` 源码目录，聚焦实际使用方式与常见接入场景。
 
 ## 适用场景
 
@@ -31,7 +31,7 @@
 // main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { mountReactToGlobal } from '@yunfan/vue-adapter'
+import { mountReactToGlobal } from '@fan-scripts/vue-adapter'
 
 async function bootstrap() {
   await mountReactToGlobal('18')
@@ -47,7 +47,7 @@ bootstrap()
 
 ```vue
 <script setup lang="ts">
-import { VueRemoteModuleProvider } from '@yunfan/vue-adapter'
+import { VueRemoteModuleProvider } from '@fan-scripts/vue-adapter'
 
 const handleLoad = (component: any) => {
   console.log('远程组件加载成功:', component)
@@ -96,7 +96,7 @@ const handleError = (error: Error) => {
 import {
   useVueRemoteModule,
   ReactComponentRenderer,
-} from '@yunfan/vue-adapter'
+} from '@fan-scripts/vue-adapter'
 
 const {
   component: RemoteButton,
@@ -145,7 +145,7 @@ const {
 
 如果遇到“`@load` 已触发但界面没显示”的情况，优先检查：
 
-- 是否使用了最新的 `@yunfan/vue-adapter`
+- 是否使用了最新的 `@fan-scripts/vue-adapter`
 - `moduleName` 导出是否真的是 React 组件
 - `children` 等 props 是否在远程组件中被实际渲染
 - 是否在 `main.ts` 执行了 `await mountReactToGlobal('18')`

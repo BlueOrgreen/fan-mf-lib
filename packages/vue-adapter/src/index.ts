@@ -7,7 +7,7 @@
  * @example
  * ```ts
  * // 在 Vue 项目的入口文件 (main.ts) 中
- * import { mountReactToGlobal } from '@yunfan/vue-adapter'
+ * import { mountReactToGlobal } from '@fan-scripts/vue-adapter'
  *
  * // 加载 React 到全局 (React 远程组件需要这些全局变量)
  * await mountReactToGlobal('18')
@@ -20,7 +20,7 @@
  * ```vue
  * <!-- 在 Vue 组件中使用远程 React 组件 -->
  * <script setup lang="ts">
- * import { VueRemoteModuleProvider } from '@yunfan/vue-adapter'
+ * import { VueRemoteModuleProvider } from '@fan-scripts/vue-adapter'
  * </script>
  *
  * <template>
@@ -37,7 +37,7 @@
  * ```vue
  * <!-- 使用 Hook 方式 -->
  * <script setup lang="ts">
- * import { useVueRemoteModule } from '@yunfan/vue-adapter'
+ * import { useVueRemoteModule } from '@fan-scripts/vue-adapter'
  *
  * const { component, loading, error, retry } = useVueRemoteModule({
  *   pkg: 'my-react-components',

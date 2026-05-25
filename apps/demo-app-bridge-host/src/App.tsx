@@ -1,6 +1,6 @@
 import './App.css'
 import { loadRemote } from '@module-federation/runtime'
-import { createRemoteAppComponent } from 'fan-mf-runtime'
+import { createRemoteAppComponent } from '@fan-scripts/fan-mf-runtime'
 import { useState } from 'react'
 
 interface DemoBridgeAppProps {

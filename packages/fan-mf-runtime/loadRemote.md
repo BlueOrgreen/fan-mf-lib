@@ -1,6 +1,6 @@
 # loadRemote 使用文档
 
-`fan-mf-runtime` 是一个用于运行时动态加载远程 React 组件的工具库。本文档提供详细的使用指南和 API 参考。
+`@fan-scripts/fan-mf-runtime` 是一个用于运行时动态加载远程 React 组件的工具库。本文档提供详细的使用指南和 API 参考。
 
 ## 目录
 
@@ -89,13 +89,13 @@ const { mf } = await loadRemoteMultiVersion({
 ## 安装
 
 ```bash
-pnpm add fan-mf-runtime
+pnpm add @fan-scripts/fan-mf-runtime
 ```
 
 或从 workspace 安装：
 
 ```bash
-pnpm add fan-mf-runtime --workspace
+pnpm add @fan-scripts/fan-mf-runtime --workspace
 ```
 
 ## 快速开始
@@ -103,7 +103,7 @@ pnpm add fan-mf-runtime --workspace
 ### 1. 基础使用
 
 ```typescript
-import { loadRemoteMultiVersion } from 'fan-mf-runtime';
+import { loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime';
 import { useEffect, useState } from 'react';
 
 function App() {
@@ -523,7 +523,7 @@ npm 包名，用于从 CDN 加载。
 ### 示例 1: React Hook 封装
 
 ```typescript
-import { loadRemoteMultiVersion } from 'fan-mf-runtime';
+import { loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime';
 
 function useRemoteComponent(
   pkg: string,
@@ -923,7 +923,7 @@ const { mf } = await loadRemoteMultiVersion(options, [
 #### 4. 通过 `registerRemotes` 动态注册多个来源
 
 ```typescript
-import { loadRemoteMultiVersion, createRemoteSourcePlugin } from 'fan-mf-runtime';
+import { loadRemoteMultiVersion, createRemoteSourcePlugin } from '@fan-scripts/fan-mf-runtime';
 
 const remoteSourcePlugin = createRemoteSourcePlugin('multi-remote-source', [
   {
@@ -986,7 +986,7 @@ function buildCdnUrls(pkg: string, version: string) {
 使用 `preloadRemote` 预加载远程模块，提升用户体验。
 
 ```typescript
-import { preloadRemote } from 'fan-mf-runtime';
+import { preloadRemote } from '@fan-scripts/fan-mf-runtime';
 
 // 空闲时预加载
 preloadRemote({
@@ -1022,7 +1022,7 @@ clearPreloadCache();
 使用 `unloadRemote` 卸载已加载的远程模块，释放资源。
 
 ```typescript
-import { unloadRemote, unloadAll, getLoadedRemotes } from 'fan-mf-runtime';
+import { unloadRemote, unloadAll, getLoadedRemotes } from '@fan-scripts/fan-mf-runtime';
 
 // 卸载指定模块
 await unloadRemote({
@@ -1045,7 +1045,7 @@ console.log(loaded);
 使用 `checkRemoteHealth` 检查远程模块的可用性和性能。
 
 ```typescript
-import { checkRemoteHealth, getRemoteHealthReport, formatHealthStatus } from 'fan-mf-runtime';
+import { checkRemoteHealth, getRemoteHealthReport, formatHealthStatus } from '@fan-scripts/fan-mf-runtime';
 
 // 检查单个远程模块
 const health = await checkRemoteHealth({
@@ -1071,7 +1071,7 @@ console.log('总体状态:', report.overall);
 提供 `useRemote` 和 `useRemoteList` Hooks，简化 React 中的使用。
 
 ```typescript
-import { useRemote, useRemoteList, onRemoteReady, onRemoteError } from 'fan-mf-runtime';
+import { useRemote, useRemoteList, onRemoteReady, onRemoteError } from '@fan-scripts/fan-mf-runtime';
 
 // 单个远程组件
 function MyComponent() {
@@ -1126,7 +1126,7 @@ onRemoteError('ui-lib', (error) => {
 使用 `createSharedContext` 在不同远程模块间共享状态。
 
 ```typescript
-import { createSharedContext } from 'fan-mf-runtime';
+import { createSharedContext } from '@fan-scripts/fan-mf-runtime';
 
 // 创建共享上下文
 const { Provider, useContext, useSharedState, useSelector, setValue, getValue, reset, destroy } =
@@ -1164,7 +1164,7 @@ destroy();  // 销毁上下文
 使用 `eventBus` 实现跨模块通信。
 
 ```typescript
-import { eventBus, createEventBus } from 'fan-mf-runtime';
+import { eventBus, createEventBus } from '@fan-scripts/fan-mf-runtime';
 
 // 监听事件
 const unsubscribe = eventBus.on('user-login', (user) => {
@@ -1213,7 +1213,7 @@ import {
   sortVersions,
   getLatestVersion,
   getStableVersions,
-} from 'fan-mf-runtime';
+} from '@fan-scripts/fan-mf-runtime';
 
 // 检查版本兼容性
 const result = checkVersionCompatibility('18.2.0', '^18.0.0', 'react');
@@ -1242,7 +1242,7 @@ const stable = getStableVersions(available);  // 过滤掉 alpha/beta/rc 版本
 提供多种方式在 React 中使用远程组件。
 
 ```typescript
-import { RemoteComponent, SuspenseRemote, ErrorBoundary, withRemote, lazyRemote } from 'fan-mf-runtime';
+import { RemoteComponent, SuspenseRemote, ErrorBoundary, withRemote, lazyRemote } from '@fan-scripts/fan-mf-runtime';
 
 // 1. 直接使用 RemoteComponent
 function App() {

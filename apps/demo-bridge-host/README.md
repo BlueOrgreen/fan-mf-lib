@@ -1,6 +1,6 @@
 # Bridge Module Demo
 
-这个 demo 展示了如何使用 `fan-mf-runtime` 的 Bridge 模块来懒加载远程 React 组件。
+这个 demo 展示了如何使用 `@fan-scripts/fan-mf-runtime` 的 Bridge 模块来懒加载远程 React 组件。
 
 ## 项目结构
 
@@ -51,7 +51,7 @@ Host 应用将在 http://localhost:3002 启动
 ### 1. createLazyLoadComponentPlugin
 
 ```typescript
-import { createLazyLoadComponentPlugin } from 'fan-mf-runtime'
+import { createLazyLoadComponentPlugin } from '@fan-scripts/fan-mf-runtime'
 import { getInstance } from '@module-federation/enhanced/runtime'
 
 const instance = getInstance()
@@ -61,7 +61,7 @@ instance.registerPlugins([createLazyLoadComponentPlugin()])
 ### 2. createLazyComponent
 
 ```typescript
-import { createLazyComponent, loadRemoteMultiVersion } from 'fan-mf-runtime'
+import { createLazyComponent, loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime'
 
 const RemoteButton = createLazyComponent({
   loader: () => loadRemoteMultiVersion({
@@ -77,7 +77,7 @@ const RemoteButton = createLazyComponent({
 ### 3. prefetchComponent
 
 ```typescript
-import { prefetchComponent } from 'fan-mf-runtime'
+import { prefetchComponent } from '@fan-scripts/fan-mf-runtime'
 
 prefetchComponent({
   id: 'demo_provider/RemoteButton',
@@ -113,4 +113,4 @@ prefetchComponent({
 ### 类型错误
 
 - 运行 `pnpm build` 在 `packages/fan-mf-runtime` 中
-- 确保 `fan-mf-runtime` 已正确链接
+- 确保 `@fan-scripts/fan-mf-runtime` 已正确链接

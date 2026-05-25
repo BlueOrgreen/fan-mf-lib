@@ -35,6 +35,9 @@ importers:
 
   apps/demo-app-bridge-host:
     dependencies:
+      '@fan-scripts/fan-mf-runtime':
+        specifier: workspace:*
+        version: link:../../packages/fan-mf-runtime
       '@module-federation/bridge-react':
         specifier: 0.18.3
         version: 0.18.3(react-dom@18.3.1(react@18.3.1))(react-router-dom@6.30.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -44,9 +47,6 @@ importers:
       '@module-federation/runtime':
         specifier: 0.18.3
         version: 0.18.3
-      fan-mf-runtime:
-        specifier: workspace:*
-        version: link:../../packages/fan-mf-runtime
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -78,6 +78,9 @@ importers:
 
   apps/demo-app-bridge-provider:
     dependencies:
+      '@fan-scripts/fan-mf-runtime':
+        specifier: workspace:*
+        version: link:../../packages/fan-mf-runtime
       '@module-federation/bridge-react':
         specifier: 0.18.3
         version: 0.18.3(react-dom@18.3.1(react@18.3.1))(react-router-dom@6.30.3(react-dom@18.3.1(react@18.3.1))(react@18.3.1))(react@18.3.1)
@@ -93,9 +96,6 @@ importers:
       clsx:
         specifier: ^2.1.1
         version: 2.1.1
-      fan-mf-runtime:
-        specifier: workspace:*
-        version: link:../../packages/fan-mf-runtime
       lucide-react:
         specifier: ^0.484.0
         version: 0.484.0(react@18.3.1)
@@ -148,12 +148,12 @@ importers:
 
   apps/demo-bridge-host:
     dependencies:
+      '@fan-scripts/fan-mf-runtime':
+        specifier: workspace:*
+        version: link:../../packages/fan-mf-runtime
       '@module-federation/enhanced':
         specifier: 0.18.3
         version: 0.18.3(@rspack/core@1.7.11(@swc/helpers@0.5.21))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(typescript@5.9.3)(webpack@5.107.1)
-      fan-mf-runtime:
-        specifier: workspace:*
-        version: link:../../packages/fan-mf-runtime
       react:
         specifier: ^18.3.1
         version: 18.3.1
@@ -213,7 +213,7 @@ importers:
 
   apps/host-react18-remote:
     dependencies:
-      '@yunfan/react-adapter':
+      '@fan-scripts/react-adapter':
         specifier: workspace:*
         version: link:../../packages/react-adapter
       react:
@@ -241,7 +241,7 @@ importers:
 
   apps/host-vue3-remote:
     dependencies:
-      '@yunfan/vue-adapter':
+      '@fan-scripts/vue-adapter':
         specifier: workspace:*
         version: link:../../packages/vue-adapter
       vue:
@@ -370,7 +370,7 @@ importers:
 
   packages/react-adapter:
     dependencies:
-      fan-mf-runtime:
+      '@fan-scripts/fan-mf-runtime':
         specifier: workspace:*
         version: link:../fan-mf-runtime
       react:
@@ -407,7 +407,7 @@ importers:
 
   packages/vue-adapter:
     dependencies:
-      fan-mf-runtime:
+      '@fan-scripts/fan-mf-runtime':
         specifier: workspace:*
         version: link:../fan-mf-runtime
     devDependencies:

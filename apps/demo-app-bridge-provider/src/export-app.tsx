@@ -1,7 +1,7 @@
 import {
   type BridgeAppProviderFactory,
   createBridgeComponent,
-} from 'fan-mf-runtime'
+} from '@fan-scripts/fan-mf-runtime'
 import BridgeApp, { type DemoBridgeAppProps } from './BridgeApp'
 
 const providerFactory = createBridgeComponent<DemoBridgeAppProps>({

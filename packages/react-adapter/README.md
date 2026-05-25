@@ -1,4 +1,4 @@
-# @yunfan/react-adapter
+# @fan-scripts/react-adapter
 
 React adapter for fan-mf-runtime - enables React apps to load remote components with Module Federation.
 
@@ -12,7 +12,7 @@ React adapter for fan-mf-runtime - enables React apps to load remote components 
 ## Installation
 
 ```bash
-npm install @yunfan/react-adapter fan-mf-runtime
+npm install @fan-scripts/react-adapter @fan-scripts/fan-mf-runtime
 ```
 
 ## Usage
@@ -20,7 +20,7 @@ npm install @yunfan/react-adapter fan-mf-runtime
 ### RemoteModuleProvider
 
 ```tsx
-import { RemoteModuleProvider } from '@yunfan/react-adapter'
+import { RemoteModuleProvider } from '@fan-scripts/react-adapter'
 
 function App() {
   return (
@@ -40,7 +40,7 @@ function App() {
 ### lazyRemote + Suspense
 
 ```tsx
-import { lazyRemote } from '@yunfan/react-adapter'
+import { lazyRemote } from '@fan-scripts/react-adapter'
 import { Suspense } from 'react'
 
 const LazyDashboard = lazyRemote({
@@ -62,7 +62,7 @@ function App() {
 ### SuspenseRemoteLoader
 
 ```tsx
-import { SuspenseRemoteLoader } from '@yunfan/react-adapter'
+import { SuspenseRemoteLoader } from '@fan-scripts/react-adapter'
 
 function App() {
   return (
@@ -82,7 +82,7 @@ function App() {
 ### useRemoteModuleHook
 
 ```tsx
-import { useRemoteModuleHook } from '@yunfan/react-adapter'
+import { useRemoteModuleHook } from '@fan-scripts/react-adapter'
 
 function MyComponent() {
   const { component: RemoteComp, loading, error } = useRemoteModuleHook({

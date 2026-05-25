@@ -27,7 +27,7 @@ pnpm dev
 #### 1. 基础加载远程模块
 
 ```ts
-import { loadRemoteMultiVersion } from 'fan-mf-runtime';
+import { loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime';
 const [comp, setComp] = useState(null);
 useEffect(() => {
   async function init() {
@@ -60,7 +60,7 @@ useEffect(() => {
 本地开发时，可以使用 `localDebug` 配置直接加载本地运行的远程组件服务：
 
 ```ts
-import { loadRemoteMultiVersion } from 'fan-mf-runtime';
+import { loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime';
 
 const { scopeName, mf } = await loadRemoteMultiVersion({
   name: 'fan_mf_lib',
@@ -78,7 +78,7 @@ const mod = await mf.loadRemote(`${scopeName}/Button`);
 #### 2. 使用 React 组件加载远程模块
 
 ```tsx
-import { RemoteModuleProvider, ErrorBoundary, lazyRemote } from 'fan-mf-runtime';
+import { RemoteModuleProvider, ErrorBoundary, lazyRemote } from '@fan-scripts/fan-mf-runtime';
 import React, { Suspense } from 'react';
 
 // 方式一：使用 RemoteModuleProvider 组件（推荐）
@@ -146,7 +146,7 @@ import {
   createLazyLoadComponentPlugin,
   createLazyComponent,
   loadRemoteMultiVersion,
-} from 'fan-mf-runtime'
+} from '@fan-scripts/fan-mf-runtime'
 import { getInstance } from '@module-federation/runtime'
 
 // 1. 注册插件
@@ -177,7 +177,7 @@ function App() {
 ##### 使用 Hook
 
 ```tsx
-import { useLazyComponent, loadRemoteMultiVersion } from 'fan-mf-runtime'
+import { useLazyComponent, loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime'
 
 function MyComponent() {
   const { loading, error, Component } = useLazyComponent({
@@ -201,7 +201,7 @@ function MyComponent() {
 ##### 预加载组件
 
 ```tsx
-import { prefetchComponent } from 'fan-mf-runtime'
+import { prefetchComponent } from '@fan-scripts/fan-mf-runtime'
 
 // 在用户可能需要的地方预加载
 prefetchComponent({

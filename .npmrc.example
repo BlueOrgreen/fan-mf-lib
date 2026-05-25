@@ -1,0 +1,3 @@
+# Copy to .npmrc (gitignored) and set NPM_TOKEN in your shell.
+@fan-scripts:registry=https://registry.npmjs.org/
+//registry.npmjs.org/:_authToken=${NPM_TOKEN}

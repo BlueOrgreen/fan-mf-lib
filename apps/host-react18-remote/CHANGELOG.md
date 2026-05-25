@@ -4,10 +4,10 @@
 
 ### Patch Changes
 
-- @yunfan/react-adapter@1.0.1
+- @fan-scripts/react-adapter@1.0.1
 
 ## 1.0.1
 
 ### Patch Changes
 
-- @yunfan/react-adapter@1.0.0
+- @fan-scripts/react-adapter@1.0.0

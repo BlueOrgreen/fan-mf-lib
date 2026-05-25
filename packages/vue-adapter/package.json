@@ -1,5 +1,5 @@
 {
-  "name": "@yunfan/vue-adapter",
+  "name": "@fan-scripts/vue-adapter",
   "version": "1.0.1",
   "type": "module",
   "description": "Vue adapter for fan-mf-runtime - enables Vue 3 apps to load React remote components",
@@ -37,10 +37,10 @@
   ],
   "peerDependencies": {
     "vue": ">=3.0.0",
-    "fan-mf-runtime": ">=1.0.3"
+    "@fan-scripts/fan-mf-runtime": ">=1.0.3"
   },
   "peerDependenciesMeta": {
-    "fan-mf-runtime": {
+    "@fan-scripts/fan-mf-runtime": {
       "optional": false
     }
   },
@@ -63,7 +63,7 @@
     "vue": "^3.5.30"
   },
   "dependencies": {
-    "fan-mf-runtime": "workspace:*"
+    "@fan-scripts/fan-mf-runtime": "workspace:*"
   },
   "publishConfig": {
     "access": "public"

@@ -1,5 +1,5 @@
 {
-  "name": "fan-mf-runtime",
+  "name": "@fan-scripts/fan-mf-runtime",
   "version": "1.0.6",
   "type": "module",
   "description": "Utilities for remote reload in Module Federation & React Component",

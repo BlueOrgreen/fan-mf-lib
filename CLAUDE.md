@@ -7,9 +7,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 A pnpm monorepo for Module Federation utilities to dynamically load remote React/Vue components at runtime, with multi-version support, CDN failover, and lifecycle management.
 
 **Published packages:**
-- `fan-mf-runtime` (v1.0.3) - Core runtime loading library
-- `@yunfan/react-adapter` (v1.0.1) - React adapter for loading remote components
-- `@yunfan/vue-adapter` (v1.0.1) - Vue 3 adapter for loading React remote components
+- `@fan-scripts/fan-mf-runtime` (v1.0.3) - Core runtime loading library
+- `@fan-scripts/react-adapter` (v1.0.1) - React adapter for loading remote components
+- `@fan-scripts/vue-adapter` (v1.0.1) - Vue 3 adapter for loading React remote components
 
 **Example apps:**
 - `apps/test-mf-unpkg` - Remote component provider (React)
@@ -26,17 +26,17 @@ pnpm install
 pnpm build
 
 # Build single package
-pnpm --filter fan-mf-runtime build
-pnpm --filter @yunfan/react-adapter build
-pnpm --filter @yunfan/vue-adapter build
+pnpm --filter @fan-scripts/fan-mf-runtime build
+pnpm --filter @fan-scripts/react-adapter build
+pnpm --filter @fan-scripts/vue-adapter build
 
 # Dev/watch mode
-pnpm --filter fan-mf-runtime dev
+pnpm --filter @fan-scripts/fan-mf-runtime dev
 
 # Run tests (fan-mf-runtime has 155+ unit tests)
-pnpm --filter fan-mf-runtime test
-pnpm --filter fan-mf-runtime test:watch
-pnpm --filter fan-mf-runtime test --coverage
+pnpm --filter @fan-scripts/fan-mf-runtime test
+pnpm --filter @fan-scripts/fan-mf-runtime test:watch
+pnpm --filter @fan-scripts/fan-mf-runtime test --coverage
 
 # Lint/format/check
 pnpm lint          # All packages
@@ -44,8 +44,8 @@ pnpm format        # All packages
 pnpm check         # All packages
 
 # Package-specific
-pnpm --filter fan-mf-runtime format
-pnpm --filter fan-mf-runtime check
+pnpm --filter @fan-scripts/fan-mf-runtime format
+pnpm --filter @fan-scripts/fan-mf-runtime check
 
 # Sync remote module types (generates @mf-types)
 pnpm sync:types
@@ -61,15 +61,15 @@ pnpm release.sh publish  # Publish to npm (requires NPM_TOKEN)
 ## Package Exports
 
 **fan-mf-runtime**:
-- Main: `fan-mf-runtime` → ESM/CJS + types
+- Main: `@fan-scripts/fan-mf-runtime` → ESM/CJS + types
 - Vue entry: `fan-mf-runtime/vue`
 - React entry: `fan-mf-runtime/react`
 
-**@yunfan/react-adapter**:
+**@fan-scripts/react-adapter**:
 - Components: `RemoteModuleProvider`, `lazyRemote`
 - Hooks: `useRemoteModuleHook`
 
-**@yunfan/vue-adapter**:
+**@fan-scripts/vue-adapter**:
 - Components: `VueRemoteModuleProvider`
 - Utils: `mountReactToGlobal`, `ReactComponentRenderer`
 
@@ -140,7 +140,7 @@ The Bridge module provides lazy loading and prefetching for remote components:
 
 ```typescript
 // Core loading function
-import { loadRemoteMultiVersion } from 'fan-mf-runtime'
+import { loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime'
 
 const { scopeName, mf } = await loadRemoteMultiVersion({
   name: 'my_lib',
@@ -151,13 +151,13 @@ const { scopeName, mf } = await loadRemoteMultiVersion({
 const mod = await mf.loadRemote(`${scopeName}/ComponentName`)
 
 // React adapter
-import { RemoteModuleProvider, lazyRemote } from '@yunfan/react-adapter'
+import { RemoteModuleProvider, lazyRemote } from '@fan-scripts/react-adapter'
 
 // Vue adapter
-import { mountReactToGlobal, VueRemoteModuleProvider } from '@yunfan/vue-adapter'
+import { mountReactToGlobal, VueRemoteModuleProvider } from '@fan-scripts/vue-adapter'
 
 // Bridge - Lazy component
-import { createLazyComponent, prefetchComponent } from 'fan-mf-runtime'
+import { createLazyComponent, prefetchComponent } from '@fan-scripts/fan-mf-runtime'
 
 const RemoteButton = createLazyComponent({
   loader: () => loadRemoteMultiVersion({...}),

@@ -1,6 +1,6 @@
 # Vue Adapter 使用文档
 
-`fan-mf-runtime` 的 Vue 适配器使 Vue 3 项目能够加载和使用 React 远程组件。
+`@fan-scripts/fan-mf-runtime` 的 Vue 适配器使 Vue 3 项目能够加载和使用 React 远程组件。
 
 ## 目录
 
@@ -23,7 +23,7 @@ Vue 适配器提供了以下功能：
 ## 安装
 
 ```bash
-pnpm add fan-mf-runtime vue
+pnpm add @fan-scripts/fan-mf-runtime vue
 ```
 
 ## 快速开始
@@ -34,7 +34,7 @@ pnpm add fan-mf-runtime vue
 
 ```typescript
 import { createApp } from 'vue'
-import { mountReactToGlobal } from 'fan-mf-runtime/vue'
+import { mountReactToGlobal } from '@fan-scripts/fan-mf-runtime/vue'
 import App from './App.vue'
 
 // 异步初始化 React
@@ -53,7 +53,7 @@ bootstrap()
 
 ```vue
 <script setup lang="ts">
-import { VueRemoteModuleProvider } from 'fan-mf-runtime/vue'
+import { VueRemoteModuleProvider } from '@fan-scripts/fan-mf-runtime/vue'
 
 const handleLoad = (component) => {
   console.log('远程组件已加载:', component)
@@ -93,7 +93,7 @@ const handleError = (error) => {
 
 ```vue
 <script setup lang="ts">
-import { useVueRemoteModule } from 'fan-mf-runtime/vue'
+import { useVueRemoteModule } from '@fan-scripts/fan-mf-runtime/vue'
 
 const { component, loading, error, retry } = useVueRemoteModule({
   pkg: 'my-react-components',
@@ -246,7 +246,7 @@ function useVueRemoteModule(options: UseVueRemoteModuleOptions): UseVueRemoteMod
 
 ```vue
 <script setup lang="ts">
-import { VueRemoteModuleProvider } from 'fan-mf-runtime/vue'
+import { VueRemoteModuleProvider } from '@fan-scripts/fan-mf-runtime/vue'
 </script>
 
 <template>
@@ -263,7 +263,7 @@ import { VueRemoteModuleProvider } from 'fan-mf-runtime/vue'
 
 ```vue
 <script setup lang="ts">
-import { VueRemoteModuleProvider } from 'fan-mf-runtime/vue'
+import { VueRemoteModuleProvider } from '@fan-scripts/fan-mf-runtime/vue'
 </script>
 
 <template>
@@ -285,7 +285,7 @@ import { VueRemoteModuleProvider } from 'fan-mf-runtime/vue'
 
 ```vue
 <script setup lang="ts">
-import { VueRemoteModuleProvider } from 'fan-mf-runtime/vue'
+import { VueRemoteModuleProvider } from '@fan-scripts/fan-mf-runtime/vue'
 </script>
 
 <template>
@@ -311,7 +311,7 @@ import { VueRemoteModuleProvider } from 'fan-mf-runtime/vue'
 
 ```vue
 <script setup lang="ts">
-import { useVueRemoteModule, mountReactToGlobal } from 'fan-mf-runtime/vue'
+import { useVueRemoteModule, mountReactToGlobal } from '@fan-scripts/fan-mf-runtime/vue'
 
 const {
   component: Button,

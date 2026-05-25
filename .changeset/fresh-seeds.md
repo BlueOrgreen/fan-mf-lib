@@ -1,5 +1,5 @@
 ---
-"fan-mf-runtime": minor
+"@fan-scripts/fan-mf-runtime": minor
 ---
 
 - docs: 添加远程类型同步文档和配置文件

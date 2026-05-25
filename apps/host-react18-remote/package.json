@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "@yunfan/react-adapter": "workspace:*"
+    "@fan-scripts/react-adapter": "workspace:*"
   },
   "devDependencies": {
     "@rsbuild/core": "^1.4.13",

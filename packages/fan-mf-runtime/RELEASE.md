@@ -1,6 +1,6 @@
 # Release Guide
 
-本指南说明如何使用发布脚本管理 `fan-mf-runtime` 的版本发布流程。
+本指南说明如何使用发布脚本管理 `@fan-scripts/fan-mf-runtime` 的版本发布流程。
 
 ## 目录结构
 

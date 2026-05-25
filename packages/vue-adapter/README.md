@@ -1,8 +1,8 @@
-# @yunfan/vue-adapter
+# @fan-scripts/vue-adapter
 
 在 Vue 3 项目中加载并渲染 React 远程组件（Module Federation）。
 
-`@yunfan/vue-adapter` 基于 `fan-mf-runtime`，提供三种能力：
+`@fan-scripts/vue-adapter` 基于 `@fan-scripts/fan-mf-runtime`，提供三种能力：
 
 - 将 React/ReactDOM 挂载到全局 `window`
 - 用 `VueRemoteModuleProvider` 直接在模板里加载远程 React 组件
@@ -17,7 +17,7 @@
 ## 安装
 
 ```bash
-pnpm add @yunfan/vue-adapter fan-mf-runtime
+pnpm add @fan-scripts/vue-adapter @fan-scripts/fan-mf-runtime
 ```
 
 ## 快速开始
@@ -28,7 +28,7 @@ pnpm add @yunfan/vue-adapter fan-mf-runtime
 // main.ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { mountReactToGlobal } from '@yunfan/vue-adapter'
+import { mountReactToGlobal } from '@fan-scripts/vue-adapter'
 
 async function bootstrap() {
   await mountReactToGlobal('18')
@@ -42,7 +42,7 @@ bootstrap()
 
 ```vue
 <script setup lang="ts">
-import { VueRemoteModuleProvider } from '@yunfan/vue-adapter'
+import { VueRemoteModuleProvider } from '@fan-scripts/vue-adapter'
 
 const handleLoad = (component: any) => {
   console.log('远程组件已加载:', component)
@@ -89,7 +89,7 @@ const handleError = (error: Error) => {
 import {
   useVueRemoteModule,
   ReactComponentRenderer,
-} from '@yunfan/vue-adapter'
+} from '@fan-scripts/vue-adapter'
 
 const {
   component: RemoteButton,
@@ -234,7 +234,7 @@ Slots：
 
 ### 1. 远程模块已加载，但页面没显示组件
 
-- 确认使用最新版本 `@yunfan/vue-adapter`
+- 确认使用最新版本 `@fan-scripts/vue-adapter`
 - 确认传入的 `moduleName` 对应导出是 React 组件（函数组件/类组件）
 - 确认远程组件确实消费了你传入的 props（例如 `children`）
 

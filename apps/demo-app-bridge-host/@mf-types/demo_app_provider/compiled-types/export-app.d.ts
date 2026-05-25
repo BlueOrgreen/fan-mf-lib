@@ -1,4 +1,4 @@
-import { type BridgeAppProviderFactory } from 'fan-mf-runtime';
+import { type BridgeAppProviderFactory } from '@fan-scripts/fan-mf-runtime';
 import { type DemoBridgeAppProps } from './BridgeApp';
 declare const providerFactory: () => {
     render(info: import("@module-federation/bridge-react/v18").RenderParams): Promise<void>;

@@ -10,7 +10,7 @@
     "sync:types": "pnpm --workspace-root sync:types -- --target host-vue3-remote"
   },
   "dependencies": {
-    "@yunfan/vue-adapter": "workspace:*",
+    "@fan-scripts/vue-adapter": "workspace:*",
     "vue": "^3.5.30"
   },
   "devDependencies": {

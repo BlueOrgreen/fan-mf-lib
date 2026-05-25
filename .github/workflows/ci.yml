@@ -21,4 +21,4 @@ jobs:
           cache: pnpm
       - run: pnpm install --frozen-lockfile
       - run: pnpm run build
-      - run: pnpm --filter fan-mf-runtime run test
+      - run: pnpm --filter @fan-scripts/fan-mf-runtime run test

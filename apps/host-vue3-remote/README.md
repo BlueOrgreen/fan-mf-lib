@@ -8,7 +8,7 @@ Vue 3 Host 应用示例：用于加载并渲染 React 远程组件（Module Fede
 
 ```bash
 pnpm install
-pnpm --filter @yunfan/vue-adapter build
+pnpm --filter @fan-scripts/vue-adapter build
 pnpm --filter host-vue3-remote dev
 ```
 

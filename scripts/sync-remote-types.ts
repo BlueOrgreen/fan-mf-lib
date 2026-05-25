@@ -287,8 +287,8 @@ async function syncAll(config: SyncConfig) {
 
     return (
       scripts['sync:types'] ||
-      deps['@yunfan/react-adapter'] ||
-      deps['@yunfan/vue-adapter']
+      deps['@fan-scripts/react-adapter'] ||
+      deps['@fan-scripts/vue-adapter']
     );
   });
 

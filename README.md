@@ -1,13 +1,13 @@
 # fan-mf-lib — Yunfan Module Federation 工具集
 
-**fan-mf-lib** 是一套基于 [Module Federation](https://module-federation.io/) 的前端微模块解决方案。核心包 `fan-mf-runtime` 负责在运行时按版本加载远程 React 组件，并内置预加载、卸载、健康检查与事件总线；`@yunfan/react-adapter` 与 `@yunfan/vue-adapter` 分别面向 React 与 Vue 3 宿主。本仓库为 pnpm monorepo，附带 Bridge、React 18 / Vue 3 宿主等多套可运行示例，适合作为微前端基建学习与工程参考。
+**fan-mf-lib** 是一套基于 [Module Federation](https://module-federation.io/) 的前端微模块解决方案。核心包 `@fan-scripts/fan-mf-runtime` 负责在运行时按版本加载远程 React 组件，并内置预加载、卸载、健康检查与事件总线；`@fan-scripts/react-adapter` 与 `@fan-scripts/vue-adapter` 分别面向 React 与 Vue 3 宿主。本仓库为 pnpm monorepo，附带 Bridge、React 18 / Vue 3 宿主等多套可运行示例，适合作为微前端基建学习与工程参考。
 
 **标签**: `module-federation` · `micro-frontend` · `react` · `vue3` · `typescript` · `pnpm` · `rsbuild` · `remote-components`
 
 **仓库**: [BlueOrgreen/fan-mf-lib](https://github.com/BlueOrgreen/fan-mf-lib)
 
 [![GitHub](https://img.shields.io/github/stars/BlueOrgreen/fan-mf-lib?style=social)](https://github.com/BlueOrgreen/fan-mf-lib)
-[![License](https://img.shields.io/npm/l/fan-mf-runtime.svg)](https://github.com/BlueOrgreen/fan-mf-lib/blob/main/LICENSE)
+[![License](https://img.shields.io/npm/l/@fan-scripts/fan-mf-runtime.svg)](https://github.com/BlueOrgreen/fan-mf-lib/blob/main/LICENSE)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.9-blue.svg)](https://www.typescriptlang.org/)
 
 ## 仓库概览
@@ -18,9 +18,9 @@
 
 | 包名 | 版本 | 说明 |
 |------|------|------|
-| `fan-mf-runtime` | v1.0.4 | 核心运行时加载工具库 |
-| `@yunfan/react-adapter` | v1.0.1 | React 适配层 |
-| `@yunfan/vue-adapter` | v1.0.1 | Vue 3 适配层（在 Vue 中加载 React 组件） |
+| `@fan-scripts/fan-mf-runtime` | v1.0.4 | 核心运行时加载工具库 |
+| `@fan-scripts/react-adapter` | v1.0.1 | React 适配层 |
+| `@fan-scripts/vue-adapter` | v1.0.1 | Vue 3 适配层（在 Vue 中加载 React 组件） |
 
 ### 示例应用
 
@@ -49,11 +49,11 @@
 ## 安装
 
 ```bash
-npm install fan-mf-runtime
+npm install @fan-scripts/fan-mf-runtime
 # 或
-pnpm add fan-mf-runtime
+pnpm add @fan-scripts/fan-mf-runtime
 # 或
-yarn add fan-mf-runtime
+yarn add @fan-scripts/fan-mf-runtime
 ```
 
 ## 快速开始
@@ -61,7 +61,7 @@ yarn add fan-mf-runtime
 ### 基本使用
 
 ```typescript
-import { loadRemoteMultiVersion } from 'fan-mf-runtime';
+import { loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime';
 
 async function loadRemoteComponent() {
   const { scopeName, mf } = await loadRemoteMultiVersion({
@@ -80,7 +80,7 @@ async function loadRemoteComponent() {
 本地开发时，使用 `localDebug` 配置直接加载本地运行的远程组件服务：
 
 ```typescript
-import { loadRemoteMultiVersion } from 'fan-mf-runtime';
+import { loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime';
 
 const { scopeName, mf } = await loadRemoteMultiVersion({
   name: 'my-remote-app',
@@ -98,7 +98,7 @@ const mod = await mf.loadRemote(`${scopeName}/Button`);
 ### Bridge 模块 - 懒加载远程组件
 
 ```typescript
-import { createLazyComponent, loadRemoteMultiVersion } from 'fan-mf-runtime';
+import { createLazyComponent, loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime';
 
 const RemoteButton = createLazyComponent({
   loader: () => loadRemoteMultiVersion({
@@ -118,7 +118,7 @@ function App() {
 ### 预加载组件
 
 ```typescript
-import { prefetchComponent } from 'fan-mf-runtime';
+import { prefetchComponent } from '@fan-scripts/fan-mf-runtime';
 
 // 预加载远程组件资源
 prefetchComponent({
@@ -130,7 +130,7 @@ prefetchComponent({
 ### 使用 useLazyComponent Hook
 
 ```typescript
-import { useLazyComponent, loadRemoteMultiVersion } from 'fan-mf-runtime';
+import { useLazyComponent, loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime';
 
 function MyComponent() {
   const { loading, error, Component } = useLazyComponent({
@@ -153,7 +153,7 @@ function MyComponent() {
 ### React Adapter 方式
 
 ```typescript
-import { lazyRemote, RemoteModuleProvider } from '@yunfan/react-adapter';
+import { lazyRemote, RemoteModuleProvider } from '@fan-scripts/react-adapter';
 import { Suspense } from 'react';
 
 // 方式 1: lazyRemote
@@ -195,7 +195,7 @@ function App() {
 ### Vue Adapter 方式
 
 ```typescript
-import { VueRemoteModuleProvider } from '@yunfan/vue-adapter';
+import { VueRemoteModuleProvider } from '@fan-scripts/vue-adapter';
 
 export default {
   template: `
@@ -216,7 +216,7 @@ export default {
 创建懒加载远程组件的工厂函数。
 
 ```typescript
-import { createLazyComponent } from 'fan-mf-runtime';
+import { createLazyComponent } from '@fan-scripts/fan-mf-runtime';
 
 const LazyComponent = createLazyComponent<T>(options);
 ```
@@ -238,7 +238,7 @@ const LazyComponent = createLazyComponent<T>(options);
 用于懒加载远程组件的 React Hook。
 
 ```typescript
-import { useLazyComponent } from 'fan-mf-runtime';
+import { useLazyComponent } from '@fan-scripts/fan-mf-runtime';
 
 const { loading, error, Component } = useLazyComponent({
   loader: () => loadRemoteMultiVersion(options),
@@ -262,7 +262,7 @@ const { loading, error, Component } = useLazyComponent({
 预加载远程组件资源。
 
 ```typescript
-import { prefetchComponent } from 'fan-mf-runtime';
+import { prefetchComponent } from '@fan-scripts/fan-mf-runtime';
 
 prefetchComponent({
   id: 'remote/Component',
@@ -278,7 +278,7 @@ prefetchComponent({
 动态加载远程模块，支持多版本和故障转移。
 
 ```typescript
-import { loadRemoteMultiVersion } from 'fan-mf-runtime';
+import { loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime';
 
 const { scopeName, mf } = await loadRemoteMultiVersion(options, plugins);
 ```
@@ -313,7 +313,7 @@ const Button = module.default;
 ### 事件总线
 
 ```typescript
-import { eventBus } from 'fan-mf-runtime';
+import { eventBus } from '@fan-scripts/fan-mf-runtime';
 
 // 订阅事件
 const unsubscribe = eventBus.on('user-login', (user, meta) => {
@@ -346,7 +346,7 @@ import {
   compareVersions,
   getLatestVersion,
   getStableVersions,
-} from 'fan-mf-runtime';
+} from '@fan-scripts/fan-mf-runtime';
 
 // 检查版本兼容性
 const result = checkVersionCompatibility('18.2.0', '^18.0.0', 'react');
@@ -411,25 +411,25 @@ pnpm install
 pnpm build
 
 # 构建单个包
-pnpm --filter fan-mf-runtime build
-pnpm --filter @yunfan/react-adapter build
-pnpm --filter @yunfan/vue-adapter build
+pnpm --filter @fan-scripts/fan-mf-runtime build
+pnpm --filter @fan-scripts/react-adapter build
+pnpm --filter @fan-scripts/vue-adapter build
 
 # 监听模式
-pnpm --filter fan-mf-runtime dev
+pnpm --filter @fan-scripts/fan-mf-runtime dev
 ```
 
 ### 测试
 
 ```bash
 # 运行所有测试
-pnpm --filter fan-mf-runtime test
+pnpm --filter @fan-scripts/fan-mf-runtime test
 
 # 监听模式
-pnpm --filter fan-mf-runtime test:watch
+pnpm --filter @fan-scripts/fan-mf-runtime test:watch
 
 # 生成覆盖率报告
-pnpm --filter fan-mf-runtime test --coverage
+pnpm --filter @fan-scripts/fan-mf-runtime test --coverage
 ```
 
 ### 代码检查
@@ -442,8 +442,8 @@ pnpm format
 pnpm check
 
 # 单个包
-pnpm --filter fan-mf-runtime format
-pnpm --filter fan-mf-runtime check
+pnpm --filter @fan-scripts/fan-mf-runtime format
+pnpm --filter @fan-scripts/fan-mf-runtime check
 ```
 
 ## 项目结构
@@ -558,7 +558,7 @@ const MyLazyComponent = createLazyComponent({
 ### 4. 资源清理
 
 ```typescript
-import { unloadRemote } from 'fan-mf-runtime';
+import { unloadRemote } from '@fan-scripts/fan-mf-runtime';
 
 // 组件卸载时清理
 useEffect(() => {
@@ -674,9 +674,9 @@ ISC
 
 ## 相关链接
 
-- [npm - fan-mf-runtime](https://www.npmjs.com/package/fan-mf-runtime)
-- [npm - @yunfan/react-adapter](https://www.npmjs.com/package/@yunfan/react-adapter)
-- [npm - @yunfan/vue-adapter](https://www.npmjs.com/package/@yunfan/vue-adapter)
+- [npm - @fan-scripts/fan-mf-runtime](https://www.npmjs.com/package/fan-mf-runtime)
+- [npm - @fan-scripts/react-adapter](https://www.npmjs.com/package/@fan-scripts/react-adapter)
+- [npm - @fan-scripts/vue-adapter](https://www.npmjs.com/package/@fan-scripts/vue-adapter)
 - [Module Federation 官方文档](https://module-federation.io/)
 - [Rsbuild 文档](https://rsbuild.dev/)
 - [Rslib 文档](https://rslib.dev/)

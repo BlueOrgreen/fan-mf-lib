@@ -1,5 +1,5 @@
 import React from 'react';
-import { RemoteModuleProvider } from '@yunfan/react-adapter';
+import { RemoteModuleProvider } from '@fan-scripts/react-adapter';
 
 interface RemoteLoaderProps {
   pkg: string;

@@ -1,4 +1,4 @@
-import type { LoadResult } from 'fan-mf-runtime'
+import type { LoadResult } from '@fan-scripts/fan-mf-runtime'
 
 /**
  * 运行时 MF 实例类型（完整的 createInstance 返回值类型）

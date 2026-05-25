@@ -23,7 +23,7 @@
 
 ## 交付物
 
-- 完整 pnpm monorepo：`fan-mf-runtime`、`@yunfan/react-adapter`、`@yunfan/vue-adapter`、7 个 demo apps
+- 完整 pnpm monorepo：`@fan-scripts/fan-mf-runtime`、`@fan-scripts/react-adapter`、`@fan-scripts/vue-adapter`、7 个 demo apps
 - 品牌统一：`BlueOrgreen/fan-mf-lib`，无第三方仓库引用
 - README 稍长版介绍 + 技术标签
 - GitHub Actions CI（build + test）
@@ -34,7 +34,7 @@
 | 检查项 | 结果 |
 |--------|------|
 | `pnpm build` | ✅ 通过 |
-| `pnpm --filter fan-mf-runtime test` | ⚠️ 162/164 通过（`loadRemote.test.ts` 2 项与实现断言不一致，上游同源） |
+| `pnpm --filter @fan-scripts/fan-mf-runtime test` | ⚠️ 162/164 通过（`loadRemote.test.ts` 2 项与实现断言不一致，上游同源） |
 | `pnpm check` (biome) | ⚠️ react-adapter 等存在 lint 告警，未阻塞构建 |
 | 品牌 grep | ✅ 无 `react-mf-lib` / `TaueFenCheng` |
 

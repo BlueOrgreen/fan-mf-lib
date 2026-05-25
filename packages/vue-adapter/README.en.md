@@ -1,8 +1,8 @@
-# @yunfan/vue-adapter
+# @fan-scripts/vue-adapter
 
 Load and render React remote components in Vue 3 (via Module Federation).
 
-This package is built on top of `fan-mf-runtime` and provides:
+This package is built on top of `@fan-scripts/fan-mf-runtime` and provides:
 
 - Global React/ReactDOM mounting to `window`
 - `VueRemoteModuleProvider` for template-first usage
@@ -11,7 +11,7 @@ This package is built on top of `fan-mf-runtime` and provides:
 ## Install
 
 ```bash
-pnpm add @yunfan/vue-adapter fan-mf-runtime
+pnpm add @fan-scripts/vue-adapter @fan-scripts/fan-mf-runtime
 ```
 
 ## Quick Start
@@ -21,7 +21,7 @@ pnpm add @yunfan/vue-adapter fan-mf-runtime
 ```ts
 import { createApp } from 'vue'
 import App from './App.vue'
-import { mountReactToGlobal } from '@yunfan/vue-adapter'
+import { mountReactToGlobal } from '@fan-scripts/vue-adapter'
 
 async function bootstrap() {
   await mountReactToGlobal('18')
@@ -35,7 +35,7 @@ bootstrap()
 
 ```vue
 <script setup lang="ts">
-import { VueRemoteModuleProvider } from '@yunfan/vue-adapter'
+import { VueRemoteModuleProvider } from '@fan-scripts/vue-adapter'
 </script>
 
 <template>
@@ -72,7 +72,7 @@ import { VueRemoteModuleProvider } from '@yunfan/vue-adapter'
 import {
   useVueRemoteModule,
   ReactComponentRenderer,
-} from '@yunfan/vue-adapter'
+} from '@fan-scripts/vue-adapter'
 
 const {
   component: RemoteButton,

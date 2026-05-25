@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import HelloWorld from './components/HelloWorld.vue'
-import { VueRemoteModuleProvider, useVueRemoteModule, ReactComponentRenderer } from '@yunfan/vue-adapter'
+import { VueRemoteModuleProvider, useVueRemoteModule, ReactComponentRenderer } from '@fan-scripts/vue-adapter'
 
 // 示例：使用组件方式加载远程 React 组件
 const handleLoad = (component: any) => {

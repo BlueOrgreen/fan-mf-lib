@@ -14,7 +14,7 @@
     "@module-federation/bridge-react": "0.18.3",
     "@module-federation/enhanced": "0.18.3",
     "@module-federation/runtime": "0.18.3",
-    "fan-mf-runtime": "workspace:*",
+    "@fan-scripts/fan-mf-runtime": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },

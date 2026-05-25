@@ -4,7 +4,7 @@ import {
   createLazyComponent,
   loadRemoteMultiVersion,
   prefetchComponent,
-} from "fan-mf-runtime";
+} from "@fan-scripts/fan-mf-runtime";
 
 // 使用 createLazyComponent 创建远程组件
 const RemoteButton = createLazyComponent({

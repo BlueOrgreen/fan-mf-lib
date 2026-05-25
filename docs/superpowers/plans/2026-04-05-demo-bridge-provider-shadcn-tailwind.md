@@ -44,7 +44,7 @@
 {
   "dependencies": {
     "@module-federation/bridge-react": "0.18.3",
-    "fan-mf-runtime": "workspace:*",
+    "@fan-scripts/fan-mf-runtime": "workspace:*",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "class-variance-authority": "^0.7.1",

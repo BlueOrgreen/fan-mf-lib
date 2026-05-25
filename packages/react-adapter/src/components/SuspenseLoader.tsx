@@ -1,4 +1,4 @@
-import { loadRemoteMultiVersion } from 'fan-mf-runtime'
+import { loadRemoteMultiVersion } from '@fan-scripts/fan-mf-runtime'
 import React, {
   lazy,
   Suspense,
